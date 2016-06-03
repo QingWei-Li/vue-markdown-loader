@@ -60,7 +60,7 @@ module.exports = function (source) {
   var loadContext = this
 
   return 'module.exports = require(' + loaderUtils.stringifyRequest(loadContext, '!!' + 'vue-loader!' + filePath) + ');'
-    + 'if (module.exports.template !== ' + JSON.stringify(template) + ') module.exports.template = ' + JSON.stringify(template) + ';'
+    + 'module.exports.template = ' + JSON.stringify(template) + ';'
     + 'if (module.hot) {(function() {'
     + '  module.hot.accept();'
     + '  var hotAPI = require("vue-hot-reload-api");'

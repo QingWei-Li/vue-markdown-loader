@@ -2,11 +2,22 @@
 
 > Convert Markdown file to Vue Component using markdown-it.
 
+
+## Demo
+
+[Video]()
+
 ## Installation
 
 ```bash
 npm i vue-markdown-loader -D
 ```
+
+## Feature
+- Hot reload
+- Write vue script
+- Code highlight
+
 
 ## Usage
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
