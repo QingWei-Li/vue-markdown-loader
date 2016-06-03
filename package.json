@@ -1,0 +1,41 @@
+{
+  "name": "vue-markdown-loader",
+  "version": "0.1.0",
+  "description": "markdown file to vue component loader.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./test/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QingWei-Li/vue-markdown-loader.git"
+  },
+  "keywords": [
+    "vue",
+    "markdown",
+    "webpack",
+    "loader"
+  ],
+  "author": "qingwei-li <qingwei.li@gmail.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/QingWei-Li/vue-markdown-loader/issues"
+  },
+  "homepage": "https://github.com/QingWei-Li/vue-markdown-loader#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "highlight.js": "^9.4.0",
+    "loader-utils": "^0.2.15",
+    "markdown-it": "^6.0.5",
+    "object-merge": "^2.5.1"
+  },
+  "peerDependencies": {
+    "vue-loader": "^8.0.0",
+    "vue-hot-reload-api": "^1.2.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1",
+    "webpack": "^1.13.1"
+  }
+}
