@@ -34,8 +34,6 @@
     "vue-hot-reload-api": "^1.2.0"
   },
   "devDependencies": {
-    "tap-spec": "^4.1.1",
-    "tape": "^4.5.1",
-    "webpack": "^1.13.1"
+    "github-markdown-css": "^2.3.0"
   }
 }
