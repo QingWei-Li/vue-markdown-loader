@@ -18,7 +18,7 @@ module.exports = function (source) {
   this.cacheable()
 
   var parser
-  var opts = this.options['markdown-it'] || {}
+  var opts = this.options.vueMarkdown || {}
 
   if ({}.toString.call(opts.render) === '[object Function]') {
     parser = opts
@@ -30,10 +30,10 @@ module.exports = function (source) {
     }, opts)
 
     var plugins = opts.use
-    var renderer = opts.renderer
+    var preprocess = opts.preprocess
 
+    delete opts.preprocess
     delete opts.use
-    delete opts.renderer
 
     parser = markdown(opts.preset, opts)
 
@@ -42,11 +42,13 @@ module.exports = function (source) {
         parser.use(plugin)
       })
     }
-
-    if (renderer) {
-      objectMerge(parser.renderer, renderer)
-    }
   }
+
+  if (preprocess) {
+    source = preprocess.call(this, parser, source)
+  }
+
+  source = parser.render(source)
 
   var $ = cheerio.load(parser.render(source))
 

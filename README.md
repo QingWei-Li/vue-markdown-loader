@@ -29,16 +29,21 @@ module.exports = {
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
 ```javascript
 {
-  markdownIt: {
+  vueMarkdown: {
+    // markdown-it config
     preset: 'default',
     breaks: true,
-    renderer: {
-      rules: {
-        table_open: function () {
-          return '<table class="abc"></table>'
-        }
-      }
-    }
+
+    preprocess: function(markdownIt, source) {
+      // do any thing
+
+      return source
+    },
+
+    use: [
+      /* markdown-it plugin */
+      require('markdown-it-xxx')
+    ]
   }
 }
 ```
@@ -63,7 +68,7 @@ module.exports = {
     }]
   },
 
-  markdownIt: markdown
+  vueMarkdown: markdown
 };
 ```
 
