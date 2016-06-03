@@ -48,9 +48,9 @@ module.exports = function (source) {
     source = preprocess.call(this, parser, source)
   }
 
-  source = parser.render(source)
-
-  var $ = cheerio.load(parser.render(source))
+  var $ = cheerio.load(parser.render(source), {
+    decodeEntities: false
+  })
 
   $('script').remove()
   $('style').remove()
