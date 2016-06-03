@@ -4,7 +4,7 @@
   "description": "markdown file to vue component loader.",
   "main": "index.js",
   "scripts": {
-    "test": "tape ./test/test.js | tap-spec"
+    "test": ""
   },
   "repository": {
     "type": "git",
