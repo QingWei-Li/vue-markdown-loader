@@ -55,12 +55,12 @@ module.exports = function (source) {
   $('script').remove()
   $('style').remove()
 
-  var template = $.html().replace(/\n/g, '\\\n').replace(/"/g, '\'')
+  var template = $.html()
   var filePath = this.resourcePath
   var loadContext = this
 
   return 'module.exports = require(' + loaderUtils.stringifyRequest(loadContext, '!!' + 'vue-loader!' + filePath) + ');'
-    + 'if (module.exports.template !== "' + template + '") module.exports.template = "' + template + '";'
+    + 'if (module.exports.template !== ' + JSON.stringify(template) + ') module.exports.template = ' + JSON.stringify(template) + ';'
     + 'if (module.hot) {(function() {'
     + '  module.hot.accept();'
     + '  var hotAPI = require("vue-hot-reload-api");'
@@ -68,7 +68,7 @@ module.exports = function (source) {
     + '  if (!hotAPI.compatible) return;'
     + '  var id = ' + loaderUtils.stringifyRequest(loadContext, filePath) + ';'
     + '  if (module.hot.data) {'
-    + '    hotAPI.update(id, module.exports, "' + template + '");'
+    + '    hotAPI.update(id, module.exports, ' + JSON.stringify(template) + ');'
     + '  } else {'
     + '    hotAPI.createRecord(id, module.exports);'
     + '  }'
