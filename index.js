@@ -1,7 +1,6 @@
 var markdown = require('markdown-it')
 var hljs = require('highlight.js')
 var cheerio = require('cheerio')
-var objectMerge = require('object-merge')
 var loaderUtils = require('loader-utils')
 
 var hjsConfig = function (str, lang) {
@@ -11,7 +10,7 @@ var hjsConfig = function (str, lang) {
     } catch (__) {}
   }
 
-  return '' // use external default escaping
+  return ''
 }
 
 module.exports = function (source) {
