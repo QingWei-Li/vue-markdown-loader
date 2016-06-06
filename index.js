@@ -51,6 +51,8 @@ module.exports = function (source) {
     source = preprocess.call(this, parser, source)
   }
 
+  source = source.replace(/(script|template)\?/g, '$1')
+
   var $ = cheerio.load(parser.render(source), {
     decodeEntities: false
   })
@@ -58,7 +60,7 @@ module.exports = function (source) {
   $('script').remove()
   $('style').remove()
 
-  var template = $.html().replace(/(script|template)\?/g, '$1')
+  var template = $.html()
   var filePath = this.resourcePath
   var loadContext = this
 
