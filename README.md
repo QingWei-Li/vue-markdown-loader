@@ -53,7 +53,10 @@ reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-pre
 
     use: [
       /* markdown-it plugin */
-      require('markdown-it-xxx')
+      require('markdown-it-xxx'),
+
+      /* or */
+      [require('markdown-it-xxx'), 'this is options']
     ]
   }
 }
@@ -82,6 +85,47 @@ module.exports = {
   vueMarkdown: markdown
 };
 ```
+
+## Restrict
+You can not write more than one `template` or `script` tag in markdown file, because it will be processed vue-loader. This is a inelegant solution:
+
+```markdown
+# This will parse error
+
+demo
+```html
+<script>
+  module.exports = {}
+</script>
+`` `
+
+<!-- Because tow script -->
+<script>
+  module.exports = {}
+</script>
+```
+
+It will work. `<script?></script>`, it will not be parse by vue-loader, but I will deal with it.
+
+```markdown
+# This is ok
+
+demo
+```html
+<script?>
+  module.exports = {}
+</script>
+
+<template?>
+  <div></div>
+</template>
+`` `
+
+<script>
+  module.exports = {}
+</script>
+```
+
 
 ## License
 WTFPL

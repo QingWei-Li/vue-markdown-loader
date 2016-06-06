@@ -12,3 +12,19 @@ import Vue from 'vue'
 
 Vue.config.debug = true
 ```
+
+```html
+<script?>
+  module.exports = {}
+</script>
+<script?>
+  module.exports = {}
+</script>
+<script?>
+  module.exports = {}
+</script>
+
+<template?>
+  <div></div>
+</template>
+```

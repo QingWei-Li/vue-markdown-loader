@@ -38,7 +38,11 @@ module.exports = function (source) {
 
     if (plugins) {
       plugins.forEach(function (plugin) {
-        parser.use(plugin)
+        if (Array.isArray) {
+          parser.use.apply(parser, plugin)
+        } else {
+          parser.use(plugin)
+        }
       })
     }
   }
@@ -54,7 +58,7 @@ module.exports = function (source) {
   $('script').remove()
   $('style').remove()
 
-  var template = $.html()
+  var template = $.html().replace(/(script|template)\?/g, '$1')
   var filePath = this.resourcePath
   var loadContext = this
 
