@@ -28,3 +28,6 @@ Vue.config.debug = true
   <div></div>
 </template>
 ```
+
+<script? sdfsdf></script>
+

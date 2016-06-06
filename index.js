@@ -58,7 +58,7 @@ module.exports = function (source) {
   $('script').remove()
   $('style').remove()
 
-  var template = $.html().replace(/<(script|template)(.*?)\?>/g, '<$1$2>')
+  var template = $.html().replace(/(script|template)/g, '$1')
   var filePath = this.resourcePath
   var loadContext = this
 
