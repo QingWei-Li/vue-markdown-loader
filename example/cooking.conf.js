@@ -4,7 +4,9 @@ var path = require('path')
 cooking.set({
   entry: './src/entry.js',
   template: './src/index.tpl',
-  devServer: true,
+  devServer: {
+    port: 8802
+  },
   extends: ['vue'],
   publicPath: '/'
 })

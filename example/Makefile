@@ -1,2 +1,0 @@
-dev:
-	cooking watch

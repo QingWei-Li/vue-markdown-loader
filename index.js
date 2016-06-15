@@ -1,7 +1,9 @@
 var markdown = require('markdown-it')
 var hljs = require('highlight.js')
 var cheerio = require('cheerio')
+var hash = require('hash-sum')
 var loaderUtils = require('loader-utils')
+var cache = require('./cache')
 
 var hjsConfig = function (str, lang) {
   if (lang && hljs.getLanguage(lang)) {
@@ -50,32 +52,25 @@ module.exports = function (source) {
   if (preprocess) {
     source = preprocess.call(this, parser, source)
   }
+  source = source.replace(/@/g, '__at__')
 
-  source = source.replace(/(script|template)\?/g, '$1')
-
-  var $ = cheerio.load(parser.render(source), {
+  var filePath = this.resourcePath
+  var content = parser.render(source).replace(/__at__/g, '@')
+  var $ = cheerio.load(content, {
     decodeEntities: false
   })
+  var output = { style: $.html('style'), script: $.html('script') }
+  var result
 
-  $('script').remove()
   $('style').remove()
+  $('script').remove()
 
-  var template = $.html()
-  var filePath = this.resourcePath
-  var loadContext = this
+  result = '<template>' + $.html() + '</template>' + '\n'
+    + output.style + '\n'
+    + output.script
+  filePath = cache.save(hash(filePath), result)
 
-  return 'module.exports = require(' + loaderUtils.stringifyRequest(loadContext, '!!' + 'vue-loader!' + filePath) + ');'
-    + 'module.exports.template = ' + JSON.stringify(template) + ';'
-    + 'if (module.hot) {(function() {'
-    + '  module.hot.accept();'
-    + '  var hotAPI = require("vue-hot-reload-api");'
-    + '  hotAPI.install(require("vue"), true);'
-    + '  if (!hotAPI.compatible) return;'
-    + '  var id = ' + loaderUtils.stringifyRequest(loadContext, filePath) + ';'
-    + '  if (module.hot.data) {'
-    + '    hotAPI.update(id, module.exports, ' + JSON.stringify(template) + ');'
-    + '  } else {'
-    + '    hotAPI.createRecord(id, module.exports);'
-    + '  }'
-    + '})()}'
+  return 'module.exports = require('
+    + loaderUtils.stringifyRequest(this, '!!' + 'vue-loader!' + filePath)
+    + ');'
 }

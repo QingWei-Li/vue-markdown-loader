@@ -24,13 +24,14 @@
   "homepage": "https://github.com/QingWei-Li/vue-markdown-loader#readme",
   "dependencies": {
     "cheerio": "^0.20.0",
+    "hash-sum": "^1.0.2",
     "highlight.js": "^9.4.0",
     "loader-utils": "^0.2.15",
-    "markdown-it": "^6.0.5"
+    "markdown-it": "^6.0.5",
+    "rimraf": "^2.5.2"
   },
   "peerDependencies": {
-    "vue-loader": "^8.0.0",
-    "vue-hot-reload-api": "^1.2.0"
+    "vue-loader": "^8.0.0"
   },
   "devDependencies": {
     "github-markdown-css": "^2.3.0"

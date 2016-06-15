@@ -1,3 +1,4 @@
+
 # Hello
 
 > This is test.
@@ -13,21 +14,46 @@ import Vue from 'vue'
 Vue.config.debug = true
 ```
 
+<div
+  class="abc"
+  @click="show = false">
+  啊哈哈哈
+</div>
+
 ```html
-<script?>
+<script>
   module.exports = {}
 </script>
-<script?>
+<script>
   module.exports = {}
 </script>
-<script?>
+<script>
   module.exports = {}
 </script>
 
-<template?>
+<template>
   <div></div>
 </template>
 ```
 
-<script? sdfsdf></script>
+<style scoped>
+  .abc {
+    background-color: yellow;
+  }
+</style>
 
+<style scoped>
+  .abc {
+    background-color: yellow;
+  }
+</style>
+
+sadfsfs
+
+大家哦哦好啊谁都发生地方上的冯绍峰s
+
+> sahhhh
+
+<script sdfsdf>
+  module.exports = {}
+</script>
