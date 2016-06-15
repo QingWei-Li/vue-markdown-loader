@@ -86,6 +86,47 @@ module.exports = {
 };
 ```
 
+## Note
+Resource references can only use **absolute path**
+
+e.g.
+
+webpack config
+```javascript
+resolve: {
+  alias: {
+    src: __dirname + 'src'
+  }
+}
+```
+
+It'is work
+```markdown
+<img src="~src/images/abc.png">
+
+<script>
+  import Image from 'src/images/logo.png'
+  import Hello from 'src/components/hello.vue'
+
+  module.exports = {
+  }
+</script>
+```
+
+Incorrect
+
+```markdown
+<img src="../images/abc.png">
+
+<script>
+  import Image from '../images/logo.png'
+  import Hello from './hello.vue'
+  module.exports = {
+  }
+</script>
+```
+
+
 ## License
 WTFPL
 

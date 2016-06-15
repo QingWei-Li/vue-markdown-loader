@@ -48,6 +48,9 @@ Vue.config.debug = true
   }
 </style>
 
+<div>
+</div>
+
 sadfsfs
 
 大家哦哦好啊谁都发生地方上的冯绍峰s
@@ -55,5 +58,8 @@ sadfsfs
 > sahhhh
 
 <script sdfsdf>
-  module.exports = {}
+  var abc = require('../abc.json');
+  module.exports = {
+
+  }
 </script>
