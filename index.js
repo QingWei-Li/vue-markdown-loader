@@ -65,7 +65,7 @@ module.exports = function (source) {
   $('style').remove()
   $('script').remove()
 
-  result = '<template>' + $.html() + '</template>' + '\n'
+  result = '<template><section>' + $.html() + '</section></template>' + '\n'
     + output.style + '\n'
     + output.script
   filePath = cache.save(hash(filePath), result)

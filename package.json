@@ -31,7 +31,7 @@
     "rimraf": "^2.5.2"
   },
   "peerDependencies": {
-    "vue-loader": "^8.0.0"
+    "vue-loader": ">=8.0.0"
   },
   "devDependencies": {
     "github-markdown-css": "^2.3.0"

@@ -58,7 +58,6 @@ sadfsfs
 > sahhhh
 
 <script sdfsdf>
-  var abc = require('../abc.json');
   module.exports = {
 
   }

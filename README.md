@@ -2,6 +2,7 @@
 
 > Convert Markdown file to Vue Component using markdown-it.
 
+**Supports both Vue@1.x and Vue@2.0**
 
 ## Demo
 
