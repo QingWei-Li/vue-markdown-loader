@@ -9,9 +9,8 @@ var hjsConfig = function (str, lang) {
   if (lang && hljs.getLanguage(lang)) {
     try {
       return hljs.highlight(lang, str, true).value
-        .replace(/{{/g, '<span>{{</span>')
-        .replace(/}}/g, '<span>}}</span>')
-    } catch (__) {}
+        .replace(/({{|}})/g, '<span>$1</span>')
+    } catch (_) {}
   }
 
   return ''
