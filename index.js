@@ -8,7 +8,9 @@ var cache = require('./cache')
 var hjsConfig = function (str, lang) {
   if (lang && hljs.getLanguage(lang)) {
     try {
-      return hljs.highlight(lang, str).value
+      return hljs.highlight(lang, str, true).value
+        .replace(/{{/g, '<span>{{</span>')
+        .replace(/}}/g, '<span>}}</span>')
     } catch (__) {}
   }
 

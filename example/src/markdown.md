@@ -14,6 +14,12 @@ import Vue from 'vue'
 Vue.config.debug = true
 ```
 
+<div>
+  {{ model }} test
+</div>
+
+<compo>{{ model }}</compo>
+
 <div
   class="abc"
   @click="show = false">
@@ -57,8 +63,24 @@ sadfsfs
 
 > sahhhh
 
-<script sdfsdf>
-  module.exports = {
+<compo>{{ model }}</compo>
 
+```html
+<compo>{{model }}{{model }}{{model }}{{model }}{{model }}</compo>
+```
+
+<script>
+  module.exports = {
+    components: {
+      compo: {
+        template: `<div style="background: red;"><slot></slot></div>`
+      }
+    },
+
+    data () {
+      return {
+        model: 'abc'
+      }
+    }
   }
 </script>
