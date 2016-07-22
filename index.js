@@ -81,8 +81,8 @@ module.exports = function (source) {
   }
 
   var codeInlineRender = parser.renderer.rules.code_inline;
-  parser.renderer.rules.code_inline = function(tokens, idx) {
-    return replaceDelimiters(codeInlineRender(tokens, idx));
+  parser.renderer.rules.code_inline = function() {
+    return replaceDelimiters(codeInlineRender.apply(this, arguments));
   }
 
   if (preprocess) {
