@@ -4,6 +4,9 @@
 
 **Supports both Vue 1.x and 2.0**
 
+## Example
+https://github.com/mint-ui/docs
+
 ## Demo
 
 [Youku Video](http://v.youku.com/v_show/id_XMTU5NTU1OTEzNg==.html)
