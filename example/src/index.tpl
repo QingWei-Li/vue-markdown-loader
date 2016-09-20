@@ -5,6 +5,6 @@
   <title>Demo</title>
 </head>
 <body>
-  <app></app>
+  <div id="app"></div>
 </body>
 </html>

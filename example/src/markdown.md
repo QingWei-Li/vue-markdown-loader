@@ -68,14 +68,20 @@ sadfsfs
 <compo>{{ model }}</compo>
 
 ```html
-<compo>{{model }}{{model }}{{model }}{{model }}{{model }}</compo>
+<compo>{{model }}{{model }}{{model }}{{model }}{{ model }}</compo>
 ```
 
 <script>
   module.exports = {
     components: {
       compo: {
-        template: `<div style="background: red;"><slot></slot></div>`
+        render(h) {
+          return h('div', {
+            style: {
+              background: 'red'
+            }
+          }, this.$slots.default);
+        }
       }
     },
 
