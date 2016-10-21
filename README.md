@@ -90,6 +90,33 @@ module.exports = {
 };
 ```
 
+webpack 2.x
+
+```javascript
+var markdown = require('markdown-it')({
+  html: true,
+  breaks: true
+})
+
+markdown
+  .use(plugin1)
+  .use(plugin2, opts, ...)
+  .use(plugin3);
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.md/,
+        loader: 'vue-markdown-loader',
+        options: markdown
+      }
+    ]
+  }
+};
+```
+
+
 ## Note
 Resource references can only use **absolute path**
 
