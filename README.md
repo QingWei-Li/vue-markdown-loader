@@ -126,7 +126,7 @@ webpack config
 ```javascript
 resolve: {
   alias: {
-    src: __dirname + 'src'
+    src: __dirname + '/src'
   }
 }
 ```
