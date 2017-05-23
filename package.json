@@ -26,8 +26,7 @@
     "cheerio": "^0.20.0",
     "highlight.js": "^9.4.0",
     "loader-utils": "^0.2.15",
-    "markdown-it": "^6.0.5",
-    "rimraf": "^2.5.2"
+    "markdown-it": "^6.0.5"
   },
   "peerDependencies": {
     "vue-loader": ">=8.0.0"
