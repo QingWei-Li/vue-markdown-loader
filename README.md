@@ -1,6 +1,10 @@
 # vue-markdown-loader
 
+[![npm](https://img.shields.io/npm/v/vue-markdown-loader.svg?style=flat-square)](https://www.npmjs.com/package/vue-markdown-loader)
+![vue](https://img.shields.io/badge/vue-2.x-4fc08d.svg?colorA=2c3e50&style=flat-square)
+
 > Convert Markdown file to Vue Component using markdown-it.
+
 
 ## Example
 - https://github.com/mint-ui/docs
