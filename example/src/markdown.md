@@ -92,3 +92,11 @@ sadfsfs
     }
   }
 </script>
+
+<style src="./custom.css"></style>
+
+## 引入 style 文件
+
+<div class="custom">
+  原谅色
+</div>
