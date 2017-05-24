@@ -2,10 +2,9 @@
 
 > Convert Markdown file to Vue Component using markdown-it.
 
-**Supports both Vue 1.x and 2.0**
-
 ## Example
-https://github.com/mint-ui/docs
+- https://github.com/mint-ui/docs
+- https://github.com/elemefe/element
 
 ## Demo
 
@@ -14,6 +13,10 @@ https://github.com/mint-ui/docs
 ## Installation
 
 ```bash
+# For Vue1
+npm i vue-markdown-loader@0 -D
+
+# For Vue2
 npm i vue-markdown-loader -D
 ```
 
@@ -24,17 +27,19 @@ npm i vue-markdown-loader -D
 
 
 ## Usage
-[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
+[Documentation: Using loaders](https://webpack.js.org/concepts/loaders/)
 
 `webpack.config.js` file:
 
 ```javascript
 module.exports = {
   module: {
-    loaders: [{
-      test: /\.md/,
-      loader: 'vue-markdown-loader'
-    }]
+    rules: [
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader'
+      }
+    ]
   }
 };
 ```
@@ -44,23 +49,27 @@ module.exports = {
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
 ```javascript
 {
-  vueMarkdown: {
-    // markdown-it config
-    preset: 'default',
-    breaks: true,
-
-    preprocess: function(markdownIt, source) {
-      // do any thing
-
-      return source
-    },
-
-    use: [
-      /* markdown-it plugin */
-      require('markdown-it-xxx'),
-
-      /* or */
-      [require('markdown-it-xxx'), 'this is options']
+  module: {
+    rules: [
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader'
+        options: {
+          // markdown-it config
+          preset: 'default',
+          breaks: true,
+          preprocess: function(markdownIt, source) {
+            // do any thing
+            return source
+          },
+          use: [
+            /* markdown-it plugin */
+            require('markdown-it-xxx'),
+            /* or */
+            [require('markdown-it-xxx'), 'this is options']
+          ]
+        }
+      }
     ]
   }
 }
@@ -80,34 +89,9 @@ markdown
 
 module.exports = {
   module: {
-    loaders: [{
-      test: /\.md/,
-      loader: 'vue-markdown-loader'
-    }]
-  },
-
-  vueMarkdown: markdown
-};
-```
-
-webpack 2.x
-
-```javascript
-var markdown = require('markdown-it')({
-  html: true,
-  breaks: true
-})
-
-markdown
-  .use(plugin1)
-  .use(plugin2, opts, ...)
-  .use(plugin3);
-
-module.exports = {
-  module: {
     rules: [
       {
-        test: /\.md/,
+        test: /\.md$/,
         loader: 'vue-markdown-loader',
         options: markdown
       }
@@ -116,8 +100,7 @@ module.exports = {
 };
 ```
 
-
-## Note
+## Notes for `0.x` version
 Resource references can only use **absolute path**
 
 e.g.
