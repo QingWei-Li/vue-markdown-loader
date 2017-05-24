@@ -29,7 +29,7 @@
     "markdown-it": "^6.0.5"
   },
   "peerDependencies": {
-    "vue-loader": ">=8.0.0"
+    "vue-loader": ">=10.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
@@ -39,8 +39,9 @@
     "github-markdown-css": "^2.3.0",
     "style-loader": "^0.13.1",
     "vue": "^2.0.3",
-    "vue-loader": "^9.7.0",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "vue-loader": "^12.1.0",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.6.0",
+    "webpack-dev-server": "^2.4.5"
   }
 }
