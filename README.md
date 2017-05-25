@@ -10,9 +10,9 @@
 - https://github.com/mint-ui/docs
 - https://github.com/elemefe/element
 
-## Demo
+## Live demo
 
-[Youku Video](http://v.youku.com/v_show/id_XMTU5NTU1OTEzNg==.html)
+https://glitch.com/edit/#!/vue-markdown
 
 ## Installation
 
