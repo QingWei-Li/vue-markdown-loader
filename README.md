@@ -57,7 +57,7 @@ reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-pre
     rules: [
       {
         test: /\.md$/,
-        loader: 'vue-markdown-loader'
+        loader: 'vue-markdown-loader',
         options: {
           // markdown-it config
           preset: 'default',
