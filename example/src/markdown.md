@@ -16,7 +16,7 @@ import Vue from 'vue'
 Vue.config.debug = true
 ```
 
-<div>
+<div class="test">
   {{ model }} test
 </div>
 
@@ -28,25 +28,11 @@ Vue.config.debug = true
   啊哈哈哈
 </div>
 
+>All script or style tags in html mark will be extracted.Script will be excuted, and style will be added to ducument head.
 ```html
-<script>
-  module.exports = {}
-</script>
-<script>
-  module.exports = {}
-</script>
-<script>
-  module.exports = {}
-</script>
-
-<template>
-  <div></div>
-</template>
-```
-
 <style scoped>
-  .abc {
-    background-color: yellow;
+  .test {
+    background-color: green;
   }
 </style>
 
@@ -55,23 +41,8 @@ Vue.config.debug = true
     background-color: yellow;
   }
 </style>
-
-<div>
-</div>
-
-sadfsfs
-
-大家哦哦好啊谁都发生地方上的冯绍峰s
-
-> sahhhh
-
-<compo>{{ model }}</compo>
-
-```html
-<compo>{{model }}{{model }}{{model }}{{model }}{{ model }}</compo>
-```
-
 <script>
+  console.log("***This script tag is successfully extracted and excuted.***")
   module.exports = {
     components: {
       compo: {
@@ -92,6 +63,30 @@ sadfsfs
     }
   }
 </script>
+
+<template>
+  <div></div>
+</template>
+```
+
+
+
+<div>
+</div>
+
+sadfsfs
+
+大家哦哦好啊谁都发生地方上的冯绍峰s
+
+> sahhhh
+
+<compo>{{ model }}</compo>
+
+```html
+<compo>{{model }}{{model }}{{model }}{{model }}{{ model }}</compo>
+```
+
+
 
 <style src="./custom.css"></style>
 
