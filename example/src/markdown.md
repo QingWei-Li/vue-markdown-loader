@@ -28,7 +28,9 @@ Vue.config.debug = true
   啊哈哈哈
 </div>
 
->All script or style tags in html mark will be extracted.Script will be excuted, and style will be added to ducument head.
+> All script or style tags in html mark will be extracted.Script will be excuted, and style will be added to document head.
+> Notice if there is a string instance which contains special word "&lt;/script>", it will fetch a SyntaxError.
+> Due to the complexity to solve it, just don't do that.
 ```html
 <style scoped>
   .test {
@@ -43,6 +45,7 @@ Vue.config.debug = true
 </style>
 <script>
   let a=1<2;
+  let b="<-forget it-/script>";
   console.log("***This script tag is successfully extracted and excuted.***")
   module.exports = {
     components: {
