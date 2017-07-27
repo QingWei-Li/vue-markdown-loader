@@ -42,6 +42,7 @@ Vue.config.debug = true
   }
 </style>
 <script>
+  let a=1<2;
   console.log("***This script tag is successfully extracted and excuted.***")
   module.exports = {
     components: {
@@ -63,7 +64,7 @@ Vue.config.debug = true
     }
   }
 </script>
-
+jjjjjjjjjjjjjjjjjjjjjj
 <template>
   <div></div>
 </template>
