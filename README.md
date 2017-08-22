@@ -50,6 +50,22 @@ module.exports = {
 
 ## Options
 
+### preventExtract
+
+Since `v2.0.0`,  this loader will automatically extract script and style tags from html token content (#26). If you do not need, you can set this option
+
+```js
+{
+  test: /\.md$/,
+  loader: 'vue-markdown-loader',
+  options: {
+    preventExtract: true
+  }
+}
+```
+
+### markdownIt
+
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
 ```javascript
 {
