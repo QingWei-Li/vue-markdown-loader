@@ -64,6 +64,20 @@ Since `v2.0.0`,  this loader will automatically extract script and style tags fr
 }
 ```
 
+### wrapper
+
+You can customize wrapper tag no matter html element tag or vue component tag. Default is 'section'
+
+```js
+{
+  test: /\.md$/,
+  loader: 'vue-markdown-loader',
+  options: {
+    wrapper: 'article',
+  }
+}
+```
+
 ### markdownIt
 
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
