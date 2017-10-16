@@ -134,6 +134,29 @@ module.exports = {
 };
 ```
 
+### Add Vue configuration
+
+```js
+var webpack = require('webpack');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader'
+      }
+    ]
+  },
+
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      vue: {}
+    })
+  ]
+};
+```
+
 ## License
 WTFPL
 
