@@ -48,6 +48,32 @@ module.exports = {
 };
 ```
 
+### With `vue-loader 15`
+
+
+
+```js
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.md$/,
+                loaders: ['vue-loader', 'vue-markdown-loader/lib/markdown-compiler.js']
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
+}
+```
+
 ## Options
 
 ### preventExtract
