@@ -5,8 +5,8 @@
 
 > Convert Markdown file to Vue Component using markdown-it.
 
-
 ## Example
+
 - https://github.com/mint-ui/docs
 - https://github.com/elemefe/element
 
@@ -22,15 +22,17 @@ npm i vue-markdown-loader@0 -D
 
 # For Vue2
 npm i vue-markdown-loader -D
+npm i  vue-loader vue-template-compiler -D
 ```
 
 ## Feature
+
 - Hot reload
 - Write vue script
 - Code highlight
 
-
 ## Usage
+
 [Documentation: Using loaders](https://webpack.js.org/concepts/loaders/)
 
 `webpack.config.js` file:
@@ -50,44 +52,41 @@ module.exports = {
 
 ### With `vue-loader 15`
 
-
-
 ```js
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    module: {
-        rules: [
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            },
-            {
-                test: /\.md$/,
-                use: [
-                    {
-                        loader: 'vue-loader'
-                    },
-                    {
-                        loader: 'vue-markdown-loader/lib/markdown-compiler',
-                        options: {
-                            raw: true
-                        }
-                    }
-                ]
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          {
+            loader: 'vue-markdown-loader/lib/markdown-compiler',
+            options: {
+              raw: true
+            }
+          }
         ]
-    },
-    plugins: [
-        new VueLoaderPlugin()
+      }
     ]
-}
+  },
+  plugins: [new VueLoaderPlugin()]
+};
 ```
 
 ## Options
 
 ### preventExtract
 
-Since `v2.0.0`,  this loader will automatically extract script and style tags from html token content (#26). If you do not need, you can set this option
+Since `v2.0.0`, this loader will automatically extract script and style tags from html token content (#26). If you do not need, you can set this option
 
 ```js
 {
@@ -116,6 +115,7 @@ You can customize wrapper tag no matter html element tag or vue component tag. D
 ### markdownIt
 
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
+
 ```javascript
 {
   module: {
@@ -129,7 +129,7 @@ reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-pre
           breaks: true,
           preprocess: function(markdownIt, source) {
             // do any thing
-            return source
+            return source;
           },
           use: [
             /* markdown-it plugin */
@@ -139,12 +139,13 @@ reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-pre
           ]
         }
       }
-    ]
+    ];
   }
 }
 ```
 
 Or you can customize markdown-it
+
 ```javascript
 var markdown = require('markdown-it')({
   html: true,
@@ -193,5 +194,5 @@ module.exports = {
 ```
 
 ## License
-WTFPL
 
+WTFPL
