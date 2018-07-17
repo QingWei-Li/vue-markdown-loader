@@ -82,9 +82,30 @@ module.exports = {
 };
 ```
 
+### With Vue CLI 3
+
+In your `vue.config.js` file:
+
+```js
+module.exports = {
+  chainWebpack: config => {
+    config.module.rule('md')
+      .test(/\.md/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .end()
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
+      .options({
+        raw: true
+      })
+  }
+}
+```
+
 ## Options
 
-### preventExtract
+### `preventExtract`
 
 Since `v2.0.0`, this loader will automatically extract script and style tags from html token content (#26). If you do not need, you can set this option
 
@@ -98,7 +119,7 @@ Since `v2.0.0`, this loader will automatically extract script and style tags fro
 }
 ```
 
-### wrapper
+### `wrapper`
 
 You can customize wrapper tag no matter html element tag or vue component tag. Default is 'section'
 
@@ -112,7 +133,7 @@ You can customize wrapper tag no matter html element tag or vue component tag. D
 }
 ```
 
-### markdownIt
+### `markdownIt`
 
 reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
 
@@ -144,7 +165,7 @@ reference [markdown-it](https://github.com/markdown-it/markdown-it#init-with-pre
 }
 ```
 
-Or you can customize markdown-it
+Or you can customize `markdown-it`
 
 ```javascript
 var markdown = require('markdown-it')({
