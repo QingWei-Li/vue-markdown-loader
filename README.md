@@ -1,4 +1,7 @@
-**You have a better choice 👉 [ware-loader](https://github.com/liril-net/ware-loader)**
+You have other better choices
+
+- https://github.com/egoist/vmark
+- https://github.com/liril-net/ware-loader
 
 ---------
 
