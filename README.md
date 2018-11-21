@@ -1,3 +1,7 @@
+**You have a better choice 👉 [ware-loader](https://github.com/liril-net/ware-loader)**
+
+---------
+
 # vue-markdown-loader
 
 [![npm](https://img.shields.io/npm/v/vue-markdown-loader.svg?style=flat-square)](https://www.npmjs.com/package/vue-markdown-loader)
