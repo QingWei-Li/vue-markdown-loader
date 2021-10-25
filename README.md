@@ -2,6 +2,7 @@ You have other better choices
 
 - https://github.com/egoist/vmark
 - https://github.com/liril-net/ware-loader
+- https://github.com/wxsms/vue-md-loader
 
 ---------
 
